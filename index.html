@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0910" />
+  <meta name="description" content="경영학 박사 · 회계학 전공 오상희의 프로젝트, 역량, 경험을 담은 포트폴리오입니다." />
+  <title>오상희 | Portfolio</title>
+  <style>
+    :root { --bg:#0b0910; --surface:#15121e; --surface2:#1b1725; --text:#f6f2fa; --muted:#b1aabd; --line:rgba(210,195,227,.17); --purple:#b68bff; --purple2:#7e55df; --radius:23px; --max:1120px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:98px; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif; font-size:16px; line-height:1.75; word-break:keep-all; overflow-x:hidden; }
+    ::selection { background:#a87aff; color:#090710; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    .skip { position:absolute; left:12px; top:-90px; z-index:100; padding:10px 18px; background:white; color:black; border-radius:8px; }
+    .skip:focus { top:12px; }
+    .wrap { width:min(calc(100% - 48px),var(--max)); margin-inline:auto; }
+    header { position:fixed; inset:0 0 auto; z-index:40; background:rgba(10,8,16,.70); border-bottom:1px solid rgba(255,255,255,.08); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; min-height:75px; gap:24px; }
+    .brand { display:flex; gap:10px; align-items:center; font-size:16px; font-weight:750; letter-spacing:-.03em; white-space:nowrap; }
+    .brand-mark { display:grid; place-items:center; width:31px; height:31px; border-radius:10px; background:linear-gradient(135deg,#c69dff,#7654cc); color:#100a1e; font-weight:900; font-size:14px; }
+    nav { display:flex; align-items:center; gap:26px; }
+    nav a { color:#c7bfce; font-size:13px; font-weight:600; transition:color .2s; white-space:nowrap; }
+    nav a:hover, nav a:focus-visible { color:white; }
+    .nav-contact { border:1px solid rgba(181,137,255,.4); border-radius:30px; padding:8px 17px; color:#eadbff; }
+    .hero { min-height:min(850px,100svh); position:relative; isolation:isolate; padding:160px 0 104px; display:flex; align-items:center; overflow:hidden; background:#100b1e; }
+    .hero::before { content:""; position:absolute; z-index:-2; inset:-30%; background:radial-gradient(ellipse at 16% 22%,rgba(136,67,221,.53),transparent 43%), radial-gradient(ellipse at 82% 22%,rgba(70,33,154,.56),transparent 41%),radial-gradient(ellipse at 65% 83%,rgba(99,39,129,.34),transparent 45%),#0b0910; background-size:130% 130%; animation:gradientDrift 22s ease-in-out infinite alternate; }
+    .hero::after { content:""; position:absolute; z-index:-1; inset:0; background:linear-gradient(180deg,transparent 45%,#0b0910 99%); }
+    @keyframes gradientDrift { 0%{transform:translate(-5%,-3%) rotate(-8deg) scale(1);} 50%{transform:translate(4%,2%) rotate(5deg) scale(1.10);} 100%{transform:translate(-1%,5%) rotate(-3deg) scale(1.05);} }
+    .hero-layout { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr); gap:8%; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; color:#dac4ff; text-transform:uppercase; letter-spacing:.19em; font-size:11px; font-weight:800; }
+    .eyebrow::before { content:""; display:inline-block; width:23px; height:1px; background:#b68bff; }
+    .hero h1 { margin:26px 0 25px; font-size:clamp(53px,7.4vw,102px); line-height:1.10; letter-spacing:-.08em; font-weight:800; }
+    .script { font-family:"Nanum Pen Script", "Nanum Brush Script", "Segoe Print", "Comic Sans MS", cursive; font-weight:500; letter-spacing:-.06em; }
+    .hero h1 .accent { display:block; color:#d3b2ff; font-style:normal; }
+    .hero-deck { font-size:clamp(17px,2.1vw,22px); font-weight:600; letter-spacing:-.03em; margin:0 0 14px; }
+    .hero-desc { color:#ddd1e9; max-width:550px; font-size:15px; margin:0; }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:36px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:11px; border-radius:40px; padding:13px 23px; min-height:47px; font-size:14px; font-weight:750; border:1px solid transparent; transition:transform .18s,background .18s,border-color .18s; cursor:pointer; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn:focus-visible, a:focus-visible, button:focus-visible { outline:3px solid #d5b8ff; outline-offset:4px; }
+    .btn-primary { color:#170d29; background:#d4b5ff; }
+    .btn-primary:hover { background:#e5d1ff; }
+    .btn-outline { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.29); color:white; }
+    .btn-outline:hover { background:rgba(255,255,255,.12); }
+    .portrait-shell { position:relative; width:min(100%,360px); margin:auto; }
+    .portrait-shell::before { content:""; position:absolute; inset:18px -16px -19px 17px; border:1px solid rgba(216,177,255,.55); border-radius:180px 180px 24px 24px; transform:rotate(5deg); }
+    .portrait { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; width:100%; aspect-ratio:4/4.9; border-radius:180px 180px 24px 24px; border:1px solid #6a6472; color:#d0ccd4; background:linear-gradient(140deg,#77737e,#5e5c65 53%,#88858d); box-shadow:0 35px 90px rgba(0,0,0,.23); overflow:hidden; }
+    .portrait svg { width:43px; opacity:.72; }
+    .portrait span { font-size:13px; letter-spacing:.05em; }
+    .portrait-note { position:absolute; right:-18px; bottom:-21px; border:1px solid rgba(191,150,255,.35); padding:14px 19px; background:#1a1128; border-radius:14px; color:#e5d5fc; font-size:12px; box-shadow:0 10px 25px #09050c66; }
+    main { position:relative; }
+    section.section { padding:108px 0; }
+    .section-top { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:37px; }
+    .kicker { font-size:11px; color:#bc94ff; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+    h2 { margin:9px 0 0; font-size:clamp(34px,4.5vw,55px); letter-spacing:-.065em; line-height:1.24; }
+    .section-heading { font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif; font-style:normal; font-weight:800; }
+    .section-sub { max-width:450px; font-size:14px; color:var(--muted); margin:0 0 5px; }
+    .about-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:20px; }
+    .panel { background:linear-gradient(145deg,rgba(29,24,41,.94),rgba(19,16,28,.95)); border:1px solid var(--line); border-radius:var(--radius); padding:38px; }
+    .about-main { min-height:300px; display:flex; flex-direction:column; justify-content:space-between; }
+    .quote-mark { font-size:58px; color:#9773d1; line-height:.75; font-family:Georgia,serif; }
+    .about-statement { font-size:clamp(19px,2.5vw,27px); line-height:1.55; letter-spacing:-.045em; margin:23px 0; font-weight:650; }
+    .purple { color:#c8a5ff; }
+    .about-foot { color:var(--muted); font-size:14px; }
+    .info-list { display:grid; gap:0; margin:11px 0 0; }
+    .info-line { display:grid; grid-template-columns:95px 1fr; gap:10px; padding:17px 0; border-bottom:1px solid var(--line); font-size:14px; }
+    .info-line:last-child { border-bottom:0; }
+    .info-label { color:#a59aaf; }
+    .info-value { color:#f0eaf6; font-weight:600; }
+    .skill-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .skill-card { padding:30px 25px; border:1px solid var(--line); background:var(--surface); border-radius:20px; }
+    .skill-number { color:#9773d1; font-size:12px; font-weight:700; letter-spacing:.12em; }
+    .skill-card h3 { font-size:21px; margin:18px 0 12px; letter-spacing:-.045em; }
+    .skill-card p { font-size:14px; color:var(--muted); line-height:1.75; margin:0 0 19px; }
+    .tag-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:auto; }
+    .tag { border:1px solid rgba(181,140,255,.30); background:rgba(158,111,242,.12); color:#dabfff; border-radius:99px; font-size:12px; padding:6px 11px; font-weight:650; }
+    .experience { background:linear-gradient(180deg,#0b0910,#100d18 45%,#0b0910); }
+    .timeline { display:grid; gap:14px; }
+    .project { display:grid; grid-template-columns:145px 1fr; gap:30px; padding:28px 34px; border:1px solid var(--line); border-radius:20px; background:#181420; transition:border-color .2s,transform .2s; }
+    .project:hover { border-color:rgba(184,147,255,.47); transform:translateY(-2px); }
+    .project-date { padding-top:7px; color:#c6a4ff; font-size:14px; font-weight:800; letter-spacing:.07em; }
+    .project-header { display:flex; gap:15px; align-items:center; flex-wrap:wrap; margin-bottom:5px; }
+    .project h3 { font-size:22px; letter-spacing:-.04em; margin:0; }
+    .role { display:inline-block; padding:3px 12px; border:1px solid #5c4c75; border-radius:99px; color:#d2c3e7; font-size:12px; }
+    .project p { margin:5px 0 0; color:var(--muted); font-size:14px; }
+    .tool-layout { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .mini-heading { color:#a899b7; letter-spacing:.14em; font-size:11px; text-transform:uppercase; font-weight:800; margin:0 0 18px; }
+    .tool-list { display:flex; flex-wrap:wrap; gap:10px; }
+    .tool { border-radius:12px; border:1px solid #43374f; padding:10px 17px; font-size:14px; color:#eee4fa; background:#211b2e; font-weight:650; }
+    .credential { font-size:28px; line-height:1.4; font-weight:750; letter-spacing:-.04em; margin:0; }
+    .interests { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .interest { border-radius:20px; border:1px solid var(--line); background:var(--surface); padding:26px 32px; display:flex; justify-content:space-between; align-items:center; }
+    .interest span { font-size:19px; font-weight:650; }
+    .interest .symbol { font-size:27px; }
+    .closing { padding:95px 0 112px; position:relative; overflow:hidden; text-align:center; background:radial-gradient(ellipse at 50% 90%,#35204e 0%,#160f23 48%,#0b0910 85%); }
+    .closing h2 { font-size:clamp(42px,6.3vw,75px); margin:18px 0 14px; }
+    .closing .closing-sub { color:#d6c8e4; font-size:15px; margin-bottom:29px; }
+    .motto { font-size:20px; color:#c9a3ff; font-style:italic; margin:10px 0 13px; }
+    .footer { border-top:1px solid var(--line); padding:25px 0; color:#9b91a5; }
+    .footer-inner { display:flex; justify-content:space-between; gap:16px; font-size:12px; }
+    #toast { position:fixed; z-index:60; left:50%; bottom:25px; transform:translate(-50%,20px); background:#d8bdff; color:#170e22; border-radius:12px; padding:11px 20px; box-shadow:0 8px 24px #0007; opacity:0; pointer-events:none; transition:opacity .2s,transform .2s; font-size:13px; font-weight:750; }
+    #toast.show { opacity:1; transform:translate(-50%,0); }
+    @media(min-width:900px) { .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; } .reveal.visible { opacity:1; transform:translateY(0); } }
+    @media(max-width:800px) { .hero-layout { gap:50px; grid-template-columns:1fr 250px; } .hero h1 { font-size:60px; } .section-top { align-items:start; flex-direction:column; gap:12px; } .skill-grid { grid-template-columns:1fr; } .skill-card { min-height:auto; } .about-grid { grid-template-columns:1fr; } .portrait-note { right:-8px; } }
+    @media(max-width:620px) { .wrap { width:min(calc(100% - 36px),var(--max)); } .header-inner { min-height:67px; flex-wrap:wrap; gap:3px; padding:10px 0; } .brand { font-size:14px; } nav { width:100%; overflow-x:auto; gap:19px; padding:4px 0 2px; scrollbar-width:none; } nav::-webkit-scrollbar { display:none; } nav a { font-size:12px; } .nav-contact { padding:3px 11px; } .hero { padding:163px 0 85px; min-height:auto; } .hero-layout { grid-template-columns:1fr; gap:55px; } .hero h1 { font-size:clamp(56px,14vw,80px); } .hero-desc { font-size:14px; } .portrait-shell { width:min(70%,270px); } .portrait-note { bottom:-13px; font-size:11px; } section.section { padding:73px 0; } .panel { padding:27px; } .section-top { margin-bottom:25px; } .about-main { min-height:250px; } .project { grid-template-columns:1fr; gap:10px; padding:23px; } .project-date { padding:0; } .tool-layout { grid-template-columns:1fr; } .interests { grid-template-columns:1fr; gap:12px; } .closing { padding:80px 0 95px; } .footer-inner { flex-direction:column; gap:4px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } .reveal { opacity:1!important; transform:none!important; } }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">본문 바로가기</a>
+  <header><div class="wrap header-inner"><a class="brand" href="#top" aria-label="오상희 포트폴리오 처음으로"><span class="brand-mark">OH</span> OH SANG HUI</a><nav aria-label="주요 메뉴"><a href="#about">소개</a><a href="#strengths">강점</a><a href="#experience">경험</a><a href="#tools">도구·자격</a><a class="nav-contact" href="#contact">연락하기 ↗</a></nav></div></header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-heading"><div class="wrap hero-layout">
+      <div><span class="eyebrow">ACCOUNTING · MANAGEMENT · DATA</span><h1 id="hero-heading">안녕하세요,<span class="accent">오상희입니다.</span></h1><p class="hero-deck">경영자 보상을 전공한 경영학 박사</p><p class="hero-desc">회계학을 연구하고 가르치며, 데이터 분석과 프로그래밍의 가능성에도 관심을 넓혀가고 있습니다.</p><div class="hero-actions"><a class="btn btn-primary" href="#experience">경험 살펴보기 <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="mailto:ohsh@silla.ac.kr">이메일 보내기 <span aria-hidden="true">↗</span></a></div></div>
+      <div class="portrait-shell"><div class="portrait" role="img" aria-label="프로필 사진을 넣을 회색 자리 표시 상자"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>PROFILE PHOTO</span><span>사진을 넣어주세요</span></div><div class="portrait-note">Ph.D. in Business Administration</div></div>
+    </div></section>
+    <section class="section" id="about" aria-labelledby="about-heading"><div class="wrap"><div class="section-top reveal"><div><span class="kicker">01 / ABOUT ME</span><h2 id="about-heading" class="section-heading">나를 소개합니다</h2></div><p class="section-sub">회계학의 전문성을 바탕으로 새로운 분야에 대한 배움을 이어갑니다.</p></div><div class="about-grid"><div class="panel about-main reveal"><div><span class="quote-mark" aria-hidden="true">“</span><p class="about-statement">저는 <span class="purple">회계학을 전공</span>하고 학생들에게 회계학을 가르치고 있습니다. <span class="purple">데이터 분석</span>에 관심이 많으며, <span class="purple">프로그래밍 역량</span>도 더욱 키우고 싶습니다.</p></div><div class="about-foot">관심 분야를 확장하며 새로운 취업 기회를 찾고 있습니다.</div></div><div class="panel reveal"><p class="mini-heading">PROFILE AT A GLANCE</p><div class="info-list"><div class="info-line"><span class="info-label">이름</span><span class="info-value">오상희</span></div><div class="info-line"><span class="info-label">학력·전공</span><span class="info-value">경영학 박사 · 회계학 전공</span></div><div class="info-line"><span class="info-label">전문 분야</span><span class="info-value">경영자 보상 · 회계학</span></div><div class="info-line"><span class="info-label">관심 분야</span><span class="info-value">데이터 관리 · 데이터 분석 · 프로그래밍</span></div><div class="info-line"><span class="info-label">지원 목표</span><span class="info-value">새로운 취업 기회 탐색</span></div></div></div></div></div></section>
+    <section class="section" id="strengths" aria-labelledby="strengths-heading"><div class="wrap"><div class="section-top reveal"><div><span class="kicker">02 / STRENGTHS</span><h2 id="strengths-heading" class="section-heading">나의 강점</h2></div><p class="section-sub">협업, 폭넓은 관심, 균형 잡힌 소통을 강점으로 생각합니다.</p></div><div class="skill-grid"><article class="skill-card reveal"><span class="skill-number">01 — COLLABORATION</span><h3>팀 협업과 리더십</h3><p>여러 프로젝트를 이끌어 본 경험을 바탕으로 팀과 함께 목표를 추진합니다.</p><div class="tag-row"><span class="tag">#팀협업</span><span class="tag">#프로젝트리더</span></div></article><article class="skill-card reveal"><span class="skill-number">02 — CURIOSITY</span><h3>다양한 관심사</h3><p>경영학을 넘어 데이터 관리와 프로그래밍까지 관심의 범위를 확장하고 있습니다.</p><div class="tag-row"><span class="tag">#경영학</span><span class="tag">#데이터관리</span><span class="tag">#프로그래밍</span></div></article><article class="skill-card reveal"><span class="skill-number">03 — COMMUNICATION</span><h3>T이면서 파워 F</h3><p>분석적인 사고와 공감하는 태도를 함께 발휘하며 프로젝트를 이끌고자 합니다.</p><div class="tag-row"><span class="tag">#분석적사고</span><span class="tag">#공감과소통</span><span class="tag">#프로젝트추진</span></div></article></div></div></section>
+    <section class="section experience" id="experience" aria-labelledby="experience-heading"><div class="wrap"><div class="section-top reveal"><div><span class="kicker">03 / EXPERIENCE</span><h2 id="experience-heading" class="section-heading">경험과 활동</h2></div><p class="section-sub">프로젝트 및 위원회에서 수행한 역할과 주요 활동입니다.</p></div><div class="timeline"><article class="project reveal"><div class="project-date">2022.03</div><div><div class="project-header"><h3>원가 프로젝트</h3><span class="role">리더</span></div><p>주요 활동 · 원가분석</p></div></article><article class="project reveal"><div class="project-date">2023.03</div><div><div class="project-header"><h3>보상 프로젝트</h3><span class="role">리더</span></div><p>주요 활동 · 기업의 보상 설계</p></div></article><article class="project reveal"><div class="project-date">2024.03</div><div><div class="project-header"><h3>예산위원회</h3><span class="role">연구원</span></div><p>주요 활동 · 지방자치단체의 예산 의결 및 심의</p></div></article></div></div></section>
+    <section class="section" id="tools" aria-labelledby="tools-heading"><div class="wrap"><div class="section-top reveal"><div><span class="kicker">04 / EXPERTISE</span><h2 id="tools-heading" class="section-heading">도구와 자격</h2></div><p class="section-sub">업무에 활용할 수 있는 도구와 보유 자격입니다.</p></div><div class="tool-layout"><div class="panel reveal"><p class="mini-heading">TOOLS I USE</p><div class="tool-list"><span class="tool">한글</span><span class="tool">Excel</span><span class="tool">Python</span><span class="tool">SPSS</span><span class="tool">SAS</span></div></div><div class="panel reveal"><p class="mini-heading">CERTIFICATION</p><p class="credential">원가분석사</p></div></div></div></section>
+    <section class="section" id="interests" aria-labelledby="interests-heading"><div class="wrap"><div class="section-top reveal"><div><span class="kicker">05 / BEYOND WORK</span><h2 id="interests-heading" class="section-heading">일상 속의 나</h2></div><p class="section-sub">일상에서 즐기는 두 가지 취미입니다.</p></div><div class="interests"><div class="interest reveal"><span>피아노 연주</span><span class="symbol" role="img" aria-label="피아노">🎹</span></div><div class="interest reveal"><span>레고 만들기</span><span class="symbol" role="img" aria-label="레고 블록"><svg width="51" height="43" viewBox="0 0 72 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;filter:drop-shadow(0 4px 4px rgba(0,0,0,.3))"><path d="M8 24 36 12 64 24 36 37Z" fill="#BBA4FF" stroke="#E4D9FF" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 24 36 37V56L8 43Z" fill="#7953D2" stroke="#D4C0FF" stroke-width="1.5" stroke-linejoin="round"/><path d="M36 37 64 24V43L36 56Z" fill="#9A74F4" stroke="#D4C0FF" stroke-width="1.5" stroke-linejoin="round"/><ellipse cx="24" cy="16" rx="8" ry="4" fill="#D7C6FF"/><path d="M16 11V16C16 21 32 21 32 16V11" fill="#BBA4FF"/><ellipse cx="24" cy="11" rx="8" ry="4" fill="#E7DFFF"/><ellipse cx="44" cy="25" rx="8" ry="4" fill="#D7C6FF"/><path d="M36 20V25C36 30 52 30 52 25V20" fill="#BBA4FF"/><ellipse cx="44" cy="20" rx="8" ry="4" fill="#E7DFFF"/></svg></span></div></div></div></section>
+    <section class="closing" id="contact" aria-labelledby="contact-heading"><div class="wrap reveal"><span class="kicker">06 / CONTACT</span><h2 id="contact-heading" class="section-heading">함께할 기회를 기다립니다.</h2><p class="motto">“No Pain, No Gain.”</p><p class="closing-sub">열심히 하자!! 새로운 일에도 성실하게 도전하겠습니다.</p><div class="hero-actions" style="justify-content:center"><a class="btn btn-primary" href="mailto:ohsh@silla.ac.kr?subject=%EC%98%A4%EC%83%81%ED%9D%AC%20%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20%EB%AC%B8%EC%9D%98">ohsh@silla.ac.kr <span aria-hidden="true">↗</span></a><button class="btn btn-outline" type="button" id="copy-email">이메일 주소 복사 <span aria-hidden="true">⧉</span></button></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> 오상희. Portfolio.</span><span>Accounting · Management · Data</span></div></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observed = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold:0.10 });
+      observed.forEach(el => observer.observe(el));
+    } else { observed.forEach(el => el.classList.add('visible')); }
+    const toast = document.getElementById('toast'); let toastTimeout;
+    function notify(message) { toast.textContent=message; toast.classList.add('show'); clearTimeout(toastTimeout); toastTimeout=setTimeout(()=>toast.classList.remove('show'),2400); }
+    document.getElementById('copy-email').addEventListener('click', async () => {
+      const email='ohsh@silla.ac.kr';
+      try {
+        if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(email);
+        else { const temp=document.createElement('textarea'); temp.value=email; temp.style.position='fixed'; temp.style.opacity='0'; document.body.appendChild(temp); temp.select(); const success=document.execCommand('copy'); temp.remove(); if (!success) throw Error('copy failed'); }
+        notify('이메일 주소를 복사했습니다.');
+      } catch(err) { notify('복사할 주소: '+email); }
+    });
+  </script>
+</body>
+</html>
